@@ -12,6 +12,7 @@ import type { CurrentUserLike } from "@/components/providers/api-key-section";
 import { OAuthCredentialList, type OAuthAccountWithOwnership } from "@/components/providers/oauth-credential-list";
 import { OAuthImportForm } from "@/components/providers/oauth-import-form";
 import { OAuthActions } from "@/components/providers/oauth-actions";
+import { BridgeProviderCards } from "@/components/providers/bridge-provider-cards";
 import { useTranslations } from "next-intl";
 
 type ShowToast = ReturnType<typeof useToast>["showToast"];
@@ -985,6 +986,8 @@ export function OAuthSection({
         </div>
 
         <div className="space-y-3">
+          <BridgeProviderCards />
+
           <OAuthCredentialList
             accounts={accounts}
             loading={oauthAccountsLoading}
